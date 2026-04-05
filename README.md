@@ -51,7 +51,7 @@ src/
 ## Installation & Setup
 
 ```bash
-git clone <your-repo-link>
+git clone https://github.com/saurav-singh-web/ShoppyGlobe
 cd shoppyglobe
 npm install
 npm run dev
@@ -61,7 +61,7 @@ npm run dev
 
 ## 🔗 GitHub Repository
 
-👉 <your-repo-link>
+👉 [<your-repo-link>](https://github.com/saurav-singh-web/ShoppyGlobe)
 
 ---
 
