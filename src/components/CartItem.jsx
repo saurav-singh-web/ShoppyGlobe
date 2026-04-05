@@ -60,12 +60,7 @@ const CartItem = ({ item }) => {
             </button>
           </div>
 
-          <button
-            onClick={() => dispatch(removeFromCart(item.id))}
-            className="text-red-500 text-sm hover:underline"
-          >
-            Remove
-          </button>
+          
         </div>
       </div>
 
