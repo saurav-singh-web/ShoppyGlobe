@@ -61,7 +61,9 @@ const FoodDetailCard = ({ food, onAddToCart }) => {
           <div className="flex-grow" />
 
           <button
-            onClick={() => onAddToCart(quantity)}
+            onClick={() =>{ onAddToCart(quantity);
+              setQuantity(1);
+            }}
             className="mt-6 bg-yellow-500 text-white py-3 rounded-lg font-semibold hover:bg-yellow-600 transition"
           >
             Add {quantity} to Cart

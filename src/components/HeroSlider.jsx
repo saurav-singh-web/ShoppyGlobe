@@ -29,10 +29,12 @@ const HeroSlider = () => {
   const slide = slides[index];
 
   return (
-    <div className="bg-gradient-to-r from-yellow-200 to-orange-200 p-10 rounded-lg text-center shadow mt-15 transition-transform duration-300 hover:scale-110">
+    <div className="flex justify-center">
+    <div className="bg-gradient-to-r from-yellow-200 to-orange-200 p-10 rounded-lg text-center w-200 shadow mt-15 transition-transform duration-300 hover:scale-120">
       <h2 className="text-2xl font-bold">{slide.title}</h2>
       <p className="mt-2 text-gray-700">{slide.desc}</p>
     </div>
+     </div>
   );
 };
 
