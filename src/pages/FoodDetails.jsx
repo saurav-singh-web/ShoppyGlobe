@@ -1,5 +1,4 @@
 import { useParams } from "react-router-dom";
-import foodData from "../utils/foodApi";
 import { useEffect, useState } from "react";
 import FoodDetailCard from "../components/FoodDetailCard";
 import { useDispatch } from "react-redux";
@@ -18,17 +17,10 @@ const FoodDetail = () => {
     useEffect(() => {
         const fetchFood = async () => {
         try {
-        await new Promise((resolve) => setTimeout(resolve, 300));
 
-        const foundFood = foodData.find(
-          (item) => item.id === Number(id)
-        );
-
-        if (!foundFood) {
-          throw new Error("Food not found");
-        }
-
-        setFood(foundFood);
+          const res = await fetch(`https://dummyjson.com/products/${id}`)
+          const data = await res.json();
+          setFood(data);
         }catch (err) {
             setError("Failed to load details");
         } finally {
@@ -38,7 +30,7 @@ const FoodDetail = () => {
         fetchFood();
     }, [id]);
 
-    if (!food) return <Loader />;
+    if (loading) return <Loader />;
     if (error) return <ErrorMessage message={error} />;
   return (
     <FoodDetailCard

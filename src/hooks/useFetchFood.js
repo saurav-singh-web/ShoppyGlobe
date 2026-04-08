@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import foodsData from "../utils/foodApi";
 
 const useFetchFoods = () => {
   const [foods, setFoods] = useState([]);
@@ -9,16 +8,15 @@ const useFetchFoods = () => {
   useEffect(() => {
     const fetchFoods = async () => {
       try {
-        await new Promise((resolve) => setTimeout(resolve, 500));
-
-        setFoods(foodsData);
+        const res = await fetch("https://dummyjson.com/products");
+        const data = await res.json();
+        setFoods(data.products);
       } catch (err) {
         setError("Failed to load food items");
       } finally {
         setLoading(false);
       }
     };
-
     fetchFoods();
   }, []);
   return { foods, loading, error };
