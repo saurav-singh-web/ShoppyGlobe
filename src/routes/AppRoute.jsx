@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "../pages/Home";
 import NotFound from "../pages/NotFound";
 import Success from '../pages/Success';
-import Loader from '../Components/Loader';
+import Loader from '../components/Loader';
 
 const Cart = React.lazy(() => import("../pages/Cart"));
 const CheckOut = React.lazy(() => import("../pages/Checkout"));
